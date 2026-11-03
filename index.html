@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#090e1a">
+  <meta name="description" content="Texas Election Desk 2026. Seguimiento de resultados oficiales, Senado, gobernación, legislatura y noticias verificadas.">
+  <title>Texas Election Desk · 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="app.js"></script>
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar" aria-label="Navegación">
+    <a class="logo" href="#inicio" aria-label="Texas Election Desk inicio"><span class="star-mark">★</span><span><b>TEXAS<span class="logo-ital">/</span>LIVE</b><small>ELECTION DESK · 2026</small></span></a>
+    <div class="side-caption">COBERTURA</div>
+    <nav class="side-nav">
+      <a class="nav-link active" href="#inicio" data-tab="inicio"><span>▦</span> Panorama general</a>
+      <a class="nav-link" href="#senado" data-tab="senado"><span>▤</span> Senado federal</a>
+      <a class="nav-link" href="#gobernacion" data-tab="gobernacion"><span>◈</span> Gobernación</a>
+      <a class="nav-link" href="#legislatura" data-tab="legislatura"><span>▥</span> Legislatura estatal</a>
+      <a class="nav-link" href="#noticias" data-tab="noticias"><span>◉</span> Noticias</a>
+    </nav>
+    <div class="side-caption" style="margin-top:28px">FUENTES</div>
+    <div class="source-list">
+      <a href="https://electionresults.sos.state.tx.us/results.html" target="_blank" rel="noopener noreferrer">Secretaría de Estado <span>↗</span></a>
+      <a href="https://apps.texastribune.org/features/2026/texas-general-election-live-results-2026/" target="_blank" rel="noopener noreferrer">Texas Tribune / AP <span>↗</span></a>
+      <a href="https://www.houstonchronicle.com/projects/2026/texas-election-results/" target="_blank" rel="noopener noreferrer">Houston Chronicle <span>↗</span></a>
+      <a href="https://www.tpr.org/2026-10-29/midterm-election-results-south-texas-races" target="_blank" rel="noopener noreferrer">Texas Public Radio <span>↗</span></a>
+    </div>
+    <div class="side-foot"><span class="tiny-dot"></span><span>Datos públicos · Sin afiliación partidista</span></div>
+  </aside>
+
+  <main class="main" id="inicio">
+    <div class="topbar">
+      <div class="topbar-left"><span class="eyebrow">ESTADOS UNIDOS</span><span class="separator">/</span><span class="eyebrow strong">TEXAS · ELECCIONES 2026</span></div>
+      <div class="topbar-right"><span id="clock" class="clock" aria-label="Hora de Texas">--:--:-- CST</span><button id="settingsBtn" class="icon-btn" title="Configurar conexión" aria-label="Configurar conexión">⚙</button></div>
+    </div>
+
+    <header class="hero">
+      <div class="hero-copy"><div class="live-pill"><span class="pulse-dot"></span> COBERTURA ELECTORAL 2026</div><h1>Texas en <span>tiempo real<span class="period">.</span></span></h1><p>Resultados oficiales, carreras decisivas y las últimas noticias de medios confiables. Todo en un solo lugar.</p>
+        <div class="hero-actions"><button id="refreshBtn" class="primary-btn">↻ <span>Actualizar ahora</span></button><button id="autoBtn" class="secondary-btn">⏸ <span>Automático: activado</span></button></div>
+      </div>
+      <div class="hero-art" aria-hidden="true"><svg viewBox="0 0 400 270" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="glow" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#5886ed"/><stop offset="1" stop-color="#e45c6b"/></linearGradient></defs><path d="M78 58 L125 59 L129 90 L155 93 L154 115 L191 117 L196 134 L225 133 L239 154 L267 155 L282 188 L311 178 L329 192 L320 215 L292 225 L265 221 L246 239 L218 230 L197 246 L166 229 L151 207 L125 201 L97 184 L84 163 L60 154 L65 129 L43 117 L45 90 L78 90 Z" fill="#1d2b47" stroke="url(#glow)" stroke-width="2"/><path d="M74 90h250M120 57l37 165M195 115l24 118M60 150l229 40" stroke="#3b4e77" stroke-width="1" opacity=".65"/><circle cx="212" cy="166" r="13" fill="#e65c70" opacity=".16"/><circle cx="212" cy="166" r="5" fill="#f67a8b"/><circle cx="149" cy="137" r="7" fill="#688aff" opacity=".5"/><circle cx="149" cy="137" r="3" fill="#b1c2ff"/><path d="M20 16H380V255H20z" stroke="#ffffff" stroke-opacity=".035" stroke-width="1"/></svg><span class="art-label">LONE STAR STATE <b>TX</b></span></div>
+    </header>
+
+    <section class="countdown-card" aria-label="Cuenta regresiva para el cierre de las urnas de Texas">
+      <div class="countdown-overview">
+        <div class="countdown-eyebrow"><span class="countdown-spark"></span><span id="countdownPhase">CUENTA REGRESIVA ELECTORAL</span></div>
+        <h2 id="countdownHeadline">Faltan para los primeros resultados</h2>
+        <p id="countdownSummary">Las primeras cifras podrían publicarse desde el cierre de las urnas. No es una hora garantizada de publicación.</p>
+        <div class="countdown-date"><span aria-hidden="true">◷</span><time datetime="2026-11-03T19:00:00-06:00">Hoy, 3 de noviembre · 7:00 p. m. · Houston (CST)</time></div>
+      </div>
+      <div class="countdown-numbers" id="countdownTimer" role="timer" aria-live="off" aria-label="Tiempo restante hasta las 7 de la noche de Texas">
+        <div class="countdown-unit"><strong id="countdownDays">00</strong><span>DÍAS</span></div>
+        <span class="countdown-colon" aria-hidden="true">:</span>
+        <div class="countdown-unit"><strong id="countdownHours">00</strong><span>HORAS</span></div>
+        <span class="countdown-colon" aria-hidden="true">:</span>
+        <div class="countdown-unit"><strong id="countdownMinutes">00</strong><span>MINUTOS</span></div>
+        <span class="countdown-colon" aria-hidden="true">:</span>
+        <div class="countdown-unit"><strong id="countdownSeconds">00</strong><span>SEGUNDOS</span></div>
+      </div>
+      <div class="countdown-note"><span class="countdown-note-dot"></span><span id="countdownNote">El Paso y Hudspeth cierran a las 8:00 p. m., hora de Houston. El conteo puede tardar.</span></div>
+    </section>
+
+    <section class="status-strip" aria-label="Estado de cobertura">
+      <div class="status-cell"><span class="small-label">ESTADO DE LAS URNAS</span><strong id="pollStatus">Consultando horario…</strong><span id="pollSub" class="muted">Cierre previsto: 7 p. m. CT</span></div>
+      <div class="status-cell"><span class="small-label">RESULTADOS OFICIALES</span><strong id="officialState"><span class="status-indicator pending"></span> Conectando…</strong><span id="officialTime" class="muted">Fuente: Secretaría de Estado</span></div>
+      <div class="status-cell"><span class="small-label">NOTICIAS VERIFICADAS</span><strong id="newsState"><span class="status-indicator pending"></span> Conectando…</strong><span id="newsTime" class="muted">Titulares recientes · múltiples medios</span></div>
+      <div class="status-cell refresh-cell"><span class="small-label">PRÓXIMA CONSULTA</span><strong id="nextRefresh">--:--</strong><span class="muted">Actualización cada 90 segundos</span></div>
+    </section>
+
+    <div class="section-top" id="senado"><div><span class="kicker">01 / CONTIENDAS PRINCIPALES</span><h2>El pulso electoral</h2></div><span class="verified-label"><span>✓</span> Votos: Secretaría de Estado de Texas</span></div>
+    <section class="race-grid" aria-label="Elecciones principales">
+      <article class="race-card" id="senateCard">
+        <div class="race-top"><span class="race-type">SENADO DE EE. UU.</span><span id="senateBadge" class="race-badge">Sin resultados</span></div>
+        <h3>Paxton <span>vs.</span> Talarico</h3><p class="race-meta">Escaño federal · mandato de 6 años</p>
+        <div class="candidate"><div class="candidate-left"><span class="avatar d">JT</span><div><b>James Talarico</b><small>Partido Demócrata</small></div></div><div class="candidate-results"><strong id="senateDemPct">—</strong><span id="senateDemVotes">Sin votos reportados</span></div></div>
+        <div class="candidate"><div class="candidate-left"><span class="avatar r">KP</span><div><b>Ken Paxton</b><small>Partido Republicano</small></div></div><div class="candidate-results"><strong id="senateRepPct">—</strong><span id="senateRepVotes">Sin votos reportados</span></div></div>
+        <div class="vote-bars"><span id="senateDBar" class="blue-bar" style="width:0%"></span><span id="senateRBar" class="red-bar" style="width:0%"></span><span id="senateOBar" class="other-bar" style="width:0%"></span></div>
+        <div class="race-bottom"><span id="senateTotal">Total: esperando resultados</span><a href="https://apps.texastribune.org/features/2026/texas-general-election-live-results-2026/" target="_blank" rel="noopener noreferrer">Ver AP / Tribune ↗</a></div>
+      </article>
+
+      <article class="race-card" id="gobernacion">
+        <div class="race-top"><span class="race-type">GOBERNACIÓN DE TEXAS</span><span id="govBadge" class="race-badge">Sin resultados</span></div>
+        <h3>Abbott <span>vs.</span> Hinojosa</h3><p class="race-meta">Gobernación · mandato de 4 años</p>
+        <div class="candidate"><div class="candidate-left"><span class="avatar d">GH</span><div><b>Gina Hinojosa</b><small>Partido Demócrata</small></div></div><div class="candidate-results"><strong id="govDemPct">—</strong><span id="govDemVotes">Sin votos reportados</span></div></div>
+        <div class="candidate"><div class="candidate-left"><span class="avatar r">GA</span><div><b>Greg Abbott</b><small>Partido Republicano</small></div></div><div class="candidate-results"><strong id="govRepPct">—</strong><span id="govRepVotes">Sin votos reportados</span></div></div>
+        <div class="vote-bars"><span id="govDBar" class="blue-bar" style="width:0%"></span><span id="govRBar" class="red-bar" style="width:0%"></span><span id="govOBar" class="other-bar" style="width:0%"></span></div>
+        <div class="race-bottom"><span id="govTotal">Total: esperando resultados</span><a href="https://www.houstonchronicle.com/projects/2026/texas-election-results/" target="_blank" rel="noopener noreferrer">Ver Houston Chronicle ↗</a></div>
+      </article>
+    </section>
+
+    <section class="lower-grid">
+      <div class="column-left">
+        <div class="section-top compact" id="legislatura"><div><span class="kicker">02 / EQUILIBRIO DE PODER</span><h2>Legislatura de Texas</h2></div></div>
+        <article class="legis-card">
+          <div class="legis-head"><span class="subheading">CÁMARA DE REPRESENTANTES</span><span class="subtle-chip">150 escaños en elección</span></div>
+          <div class="balance"><div><span>Republicanos</span><strong>88</strong></div><div class="align-right"><span>Demócratas</span><strong>62</strong></div></div>
+          <div class="seats-track"><div class="seat-red" style="width:58.6667%"></div><div class="seat-blue" style="width:41.3333%"></div></div>
+          <div class="balance-foot">Composición anterior a la elección · <b>76</b> para mayoría</div>
+          <hr>
+          <div class="legis-head"><span class="subheading">SENADO ESTATAL</span><span class="subtle-chip">16 escaños regulares en elección</span></div>
+          <div class="balance"><div><span>Republicanos</span><strong>20</strong></div><div class="align-right"><span>Demócratas</span><strong>11</strong></div></div>
+          <div class="seats-track"><div class="seat-red" style="width:64.5161%"></div><div class="seat-blue" style="width:35.4839%"></div></div>
+          <div class="balance-foot">Composición de referencia · <b>16</b> para mayoría</div>
+          <div class="legis-disclaimer">⚑ Estas barras muestran la composición <b>anterior</b>, no escaños ganados esta noche. No se estimarán mayorías a partir de resultados parciales.</div>
+          <div class="legis-links"><a target="_blank" rel="noopener noreferrer" href="https://apps.texastribune.org/features/2026/texas-general-election-live-results-2026/">Seguir 150 distritos en vivo ↗</a><a target="_blank" rel="noopener noreferrer" href="https://electionresults.sos.state.tx.us/results.html">Resultados oficiales ↗</a></div>
+        </article>
+
+        <div class="section-top compact"><div><span class="kicker">03 / MÁS ELECCIONES</span><h2>Otros cargos estatales</h2></div></div>
+        <article class="compact-races">
+          <div class="mini-race"><div><b>Vicegobernación</b><span>Vikki Goodwin (D) · Dan Patrick (R)</span></div><div id="ltGovMini">Pendiente</div></div>
+          <div class="mini-race"><div><b>Fiscalía general</b><span>Nathan Johnson (D) · Mayes Middleton (R)</span></div><div id="agMini">Pendiente</div></div>
+          <a href="https://electionresults.sos.state.tx.us/results.html" target="_blank" rel="noopener noreferrer">Consultar todas las contiendas ↗</a>
+        </article>
+      </div>
+
+      <div class="column-right" id="noticias">
+        <div class="section-top compact"><div><span class="kicker">04 / NEWSWIRE</span><h2>Noticias en desarrollo</h2></div><span class="live-mini"><span class="pulse-dot"></span> LIVE FEED</span></div>
+        <article class="news-panel">
+          <div class="news-head"><span>MEDIOS PERIODÍSTICOS SELECCIONADOS</span><button id="newsRefreshBtn" class="text-button" title="Actualizar noticias">↻ Recargar</button></div>
+          <div class="filters" role="group" aria-label="Filtrar noticias"><button class="filter active" data-filter="all">Todas</button><button class="filter" data-filter="senate">Senado</button><button class="filter" data-filter="governor">Gobernación</button><button class="filter" data-filter="legislature">Legislatura</button></div>
+          <div id="newsList" class="news-list" aria-live="polite"><div class="empty-news"><div class="loader"></div><b>Buscando noticias...</b><p>Consultando medios seleccionados mediante sus titulares públicos.</p></div></div>
+          <div class="news-footer"><span>Solo enlaces originales y titulares atribuidos.</span><a href="https://www.texastribune.org/" target="_blank" rel="noopener noreferrer">Texas Tribune ↗</a></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="source-method"><span class="method-icon">ⓘ</span><div><b>Cómo leer este tablero</b><p>Los números de votos provienen de la <a href="https://electionresults.sos.state.tx.us/results.html" target="_blank" rel="noopener noreferrer">Secretaría de Estado de Texas</a> cuando el servicio responde. Son conteos provisionales, no resultados certificados. Los titulares se recuperan de medios seleccionados a través de Google News RSS y enlazan a sus publicaciones. Ningún titular se interpreta automáticamente como declaración de victoria. Si falla una conexión, se indica expresamente. Las barras legislativas son históricas hasta disponer de resultados certificados por distrito.</p></div></section>
+    <footer class="footer"><span><b>TEXAS/LIVE</b> · EDICIÓN ELECTORAL 2026</span><span>Diseñado para informar, no para predecir · <span id="footerTime">—</span></span></footer>
+  </main>
+</div>
+
+<dialog id="settingsDialog" class="settings-dialog"><form method="dialog"><div class="modal-header"><h2>Configuración de datos</h2><button class="icon-btn" value="cancel" aria-label="Cerrar">✕</button></div><p>El tablero intenta usar conexiones públicas. Para mayor estabilidad puedes desplegar el archivo <code>worker.js</code> incluido en Cloudflare Workers y pegar aquí su URL.</p><label for="apiBase">URL opcional de tu Worker</label><input id="apiBase" type="url" placeholder="https://mi-worker.workers.dev" autocomplete="off"><small>Esta configuración se guarda solo en tu navegador. No requiere contraseña ni registro.</small><div class="modal-actions"><button id="clearApi" type="button" class="secondary-btn">Usar modo público</button><button id="saveApi" type="button" class="primary-btn">Guardar y actualizar</button></div></form></dialog>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
